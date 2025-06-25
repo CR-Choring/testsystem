@@ -1,0 +1,145 @@
+/* styles.css */
+@font-face {
+    font-family: 'CRSANS';
+    src: url('fonts/CRSANS.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'SFUI';
+    src: url('fonts/SF.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'PF';
+    src: url('fonts/PF.woff2') format('woff2');
+}
+
+body {
+    font-family: 'PF', PingFang SC, 微软雅黑;
+    margin: 0;
+    padding: 0;
+    background-size: cover; /* 背景图覆盖整个页面 */
+    background-repeat: no-repeat; /* 背景图不重复 */
+    background-attachment: fixed; /* 背景图固定，不随页面滚动而滚动 */
+}
+
+header {
+    color: #fff;
+    padding: 5px 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-right: 40px; /* 可选：添加一些间距 */
+
+}
+
+header .logo {
+    width: 180px; /* 设置logo的宽度 */
+    height: 180px; /* 设置logo的高度 */
+    margin-left: 78px; /* 设置logo距离屏幕左侧40px */
+    margin-right: 10px; /* 可选：添加一些间距 */
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+}
+
+nav ul li a {
+    display: inline-block;
+    padding: 10px 15px;
+    background-color: #ffe5d0; /* 按钮背景颜色 */
+    color: #ff3c00; /* 文字颜色 */
+    text-decoration: none; /* 移除下划线 */
+    border-radius: 15px; /* 圆角 */
+    transition: background-color 0.3s, transform 0.3s; /* 添加过渡效果 */
+}
+
+nav ul li a:hover {
+    background-color: #ff3c00; /* 鼠标悬停时的背景颜色 */
+     color: #ffe5d0; /* 文字颜色 */
+    transform: scale(1.05); /* 鼠标悬停时放大 */
+}
+
+main {
+    padding: 80px 80px;
+    text-align: left;
+}
+
+.footer p {
+    margin: 0;
+}
+
+/* footer样式 */
+footer {
+    text-align: center;
+    padding: 12px 0;
+    font-family: "PF";
+    font-size: 10px;
+    color: #ff8a05;
+    position: absolute;
+    width: 100%;
+}
+
+.content-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+}
+
+.text-content {
+    flex: 1;
+    max-width: 60%;
+}
+
+/* 更新插图容器样式 */
+.illustration {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start; /* 改为flex-start使内容向上对齐 */
+    margin-top: -250px; /* 负值使插图向上移动 */
+    padding-top: 0; /* 移除可能存在的内边距 */
+}
+
+/* 确保主容器允许内容向上移动 */
+.content-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start; /* 改为flex-start使所有内容向上对齐 */
+    gap: 40px;
+    padding-top: 20px; /* 减少顶部内边距 */
+}
+
+/* 调整文本内容容器的对齐方式 */
+.text-content {
+    flex: 1;
+    max-width: 60%;
+    margin-top: 0; /* 移除可能存在的上边距 */
+    padding-top: 0; /* 移除可能存在的内边距 */
+}
+
+.right-illustration {
+    max-width: 100%;
+    height: auto;
+    max-height: 400px;
+    object-fit: contain;
+}
+
+/* 响应式设计 - 在小屏幕上堆叠布局 */
+@media (max-width: 768px) {
+    .content-wrapper {
+        flex-direction: column;
+    }
+    
+    .text-content, .illustration {
+        max-width: 100%;
+    }
+    
+    .illustration {
+        justify-content: center;
+        margin-top: 30px;
+    }
+}
